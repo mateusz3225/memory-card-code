@@ -1,0 +1,26 @@
+.card {
+    display:flex;
+    border: 1px solid black;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    max-width:200px;
+    min-height: 300px;
+    flex-direction: column;
+}
+.card p {
+    letter-spacing: 0.05rem;
+    font-weight: bolder;
+    font-size:1rem;
+}
+.card img {
+    min-width:200px;
+}
+.card:hover {
+    cursor: pointer;
+}
+main {
+    display: flex;
+    flex-direction: row;
+    gap:50px;
+}
