@@ -30,7 +30,14 @@ const [Pokemon,setPokemon] = useState(
         {id:2, imageSrc:'', name: ''},
         {id:3, imageSrc:'', name: ''},
         {id:4, imageSrc:'', name: ''},
-        {id:5, imageSrc:'', name: ''}
+        {id:5, imageSrc:'', name: ''},
+        {id:6, imageSrc:'', name: ''},
+        {id:7, imageSrc:'', name: ''},
+        {id:8, imageSrc:'', name: ''},
+        {id:9, imageSrc:'', name: ''},
+        {id:10, imageSrc:'', name: ''},
+        {id:11, imageSrc:'', name: ''},
+        {id:12, imageSrc:'', name: ''},
     ]
 );
 
@@ -39,7 +46,7 @@ useEffect(() => {
 const GetPokemon = async () => {
     try {
         const promises = [];
-        for(let i=0;i<5;i++) {
+        for(let i=0;i<12;i++) {
             let randomId = Math.floor(Math.random()*(1025-1)+1);
     promises.push(fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`).then(data => data.json()));
     }
@@ -82,6 +89,11 @@ function Card({image, name,currentScore, setCurrentScore,setPokemon,array}) {
             setCurrentScore(currentScore+1)
             clickedPokemon.push(name);
             setPokemon(ShuffleAnyArray(array));
+        }
+        else {
+            setCurrentScore(0);
+            setPokemon(ShuffleAnyArray(array));
+            clickedPokemon.length = 0;
         }
     }
     return (
